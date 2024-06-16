@@ -1,0 +1,26 @@
+name: Metrics embed
+
+on:
+  schedule: # Run workflow automatically every hour
+    - cron: '0 * * * *'
+  push: # Run workflow on push to the main branch
+    branches:
+      - main
+  workflow_dispatch: # Allow manual run
+
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Metrics embed
+        uses: lowlighter/metrics@v3.34
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: <your-github-username>
+          plugin_isocalendar: yes
+          plugin_languages: yes
+          plugin_stargazers: yes
+          plugin_followup: yes
+          plugin_achievements: yes
+          plugin_contributors: yes
