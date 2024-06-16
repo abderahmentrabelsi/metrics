@@ -1,26 +1,109 @@
 name: Metrics embed
 
 on:
-  schedule: # Run workflow automatically every hour
+  schedule: 
     - cron: '0 * * * *'
-  push: # Run workflow on push to the main branch
+  push: 
     branches:
       - main
-  workflow_dispatch: # Allow manual run
+  workflow_dispatch: 
 
 jobs:
   github-metrics:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Metrics embed
+
+      - name: Isometric commit calendar full year
         uses: lowlighter/metrics@v3.34
         with:
           token: ${{ secrets.METRICS_TOKEN }}
-          user: <your-github-username>
+          user: abderahmentrabelsi
           plugin_isocalendar: yes
+          plugin_isocalendar_duration: full-year
+          base: ""
+          filename: metrics.plugin.isocalendar.fullyear.svg
+
+      - name: Languages activity - Indepth analysis
+        uses: lowlighter/metrics@v3.34
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: abderahmentrabelsi
           plugin_languages: yes
+          plugin_languages_indepth: yes
+          plugin_languages_details: lines, bytes-size
+          plugin_languages_limit: 4
+          plugin_languages_analysis_timeout: 15
+          plugin_languages_ignored: html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, shell, gnuplot
+          base: ""
+          filename: metrics.plugin.languages.indepth.svg
+
+      - name: Stargazers - Worldmap
+        uses: lowlighter/metrics@v3.34
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: abderahmentrabelsi
           plugin_stargazers: yes
+          plugin_stargazers_charts: no
+          plugin_stargazers_worldmap: yes
+          plugin_stargazers_worldmap_token: ${{ secrets.GOOGLE_MAP_TOKEN }}
+          plugin_stargazers_worldmap_sample: 200
+          base: ""
+          filename: metrics.plugin.stargazers.worldmap.svg
+
+      - name: Starred topics with icons
+        uses: lowlighter/metrics@v3.34
+        with:
+          token: NOT_NEEDED
+          user: abderahmentrabelsi
+          plugin_topics: yes
+          plugin_topics_mode: icons
+          plugin_topics_limit: 0
+          base: ""
+          filename: metrics.plugin.topics.icons.svg
+
+      - name: Lines of code changed - Compact display
+        uses: lowlighter/metrics@v3.34
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: abderahmentrabelsi
+          plugin_lines: yes
+          plugin_lines_delay: 30
+          base: repositories
+          filename: metrics.plugin.lines.svg
+
+      - name: Follow-up of issues and pull requests - Indepth analysis
+        uses: lowlighter/metrics@v3.34
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: abderahmentrabelsi
           plugin_followup: yes
+          plugin_followup_indepth: yes
+          base: ""
+          filename: metrics.plugin.followup.indepth.svg
+
+      - name: Achievements - Compact display
+        uses: lowlighter/metrics@v3.34
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: abderahmentrabelsi
           plugin_achievements: yes
-          plugin_contributors: yes
+          plugin_achievements_display: compact
+          plugin_achievements_threshold: X
+          plugin_achievements_only: >-
+            polyglot, stargazer, sponsor, deployer, member, maintainer, developer,
+            scripter, packager, explorer, infographile, manager
+          base: ""
+          filename: metrics.plugin.achievements.compact.svg
+
+      - name: Recent activity
+        uses: lowlighter/metrics@v3.34
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+          user: abderahmentrabelsi
+          plugin_activity: yes
+          plugin_activity_limit: 5
+          plugin_activity_days: 0
+          plugin_activity_filter: issue, pr, release, fork, review, ref/create
+          base: ""
+          filename: metrics.plugin.activity.svg
