@@ -21,23 +21,23 @@
                         <rect x="0" y="0" width="460" height="8" fill="white" rx="5"/>
                     </mask>
                     <rect mask="url(#languages-bar)" x="0" y="0" width="0" height="8" fill="#d1d5da"/>
-                    <rect mask="url(#languages-bar)" x="0" y="0" width="203.20753356731655" height="8" fill="#f1e05a"/>
-                    <rect mask="url(#languages-bar)" x="203.20753356731655" y="0" width="130.18627667721756" height="8" fill="#3178c6"/>
-                    <rect mask="url(#languages-bar)" x="333.3938102445341" y="0" width="74.15762049342868" height="8" fill="#f7523f"/>
-                    <rect mask="url(#languages-bar)" x="407.5514307379628" y="0" width="52.4485692620372" height="8" fill="#4F5D95"/>
+                    <rect mask="url(#languages-bar)" x="0" y="0" width="185.3573134653987" height="8" fill="#3178c6"/>
+                    <rect mask="url(#languages-bar)" x="185.3573134653987" y="0" width="169.30029917518206" height="8" fill="#f1e05a"/>
+                    <rect mask="url(#languages-bar)" x="354.6576126405808" y="0" width="61.70267661288899" height="8" fill="#f7523f"/>
+                    <rect mask="url(#languages-bar)" x="416.36028925346983" y="0" width="43.63971074653024" height="8" fill="#4F5D95"/>
                 </svg>
                 <div class="row fill-width">
                     <section>
                         <div class="field language details">
                             <div class="field">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                                    <path fill="#f1e05a" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
+                                    <path fill="#3178c6" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
                                 </svg>
-                                JavaScript
+                                TypeScript
                             </div>
                             <small>
-                                <div>6.08 MB</div>
-                                <div>44.18%</div>
+                                <div>6.66 MB</div>
+                                <div>40.3%</div>
                             </small>
                         </div>
                         <div class="field language details">
@@ -49,7 +49,7 @@
                             </div>
                             <small>
                                 <div>2.22 MB</div>
-                                <div>16.12%</div>
+                                <div>13.41%</div>
                             </small>
                         </div>
                     </section>
@@ -57,13 +57,13 @@
                         <div class="field language details">
                             <div class="field">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16">
-                                    <path fill="#3178c6" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
+                                    <path fill="#f1e05a" fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8z"/>
                                 </svg>
-                                TypeScript
+                                JavaScript
                             </div>
                             <small>
-                                <div>3.89 MB</div>
-                                <div>28.3%</div>
+                                <div>6.09 MB</div>
+                                <div>36.8%</div>
                             </small>
                         </div>
                         <div class="field language details">
@@ -75,7 +75,7 @@
                             </div>
                             <small>
                                 <div>1.57 MB</div>
-                                <div>11.4%</div>
+                                <div>9.49%</div>
                             </small>
                         </div>
                     </section>
